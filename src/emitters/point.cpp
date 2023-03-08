@@ -86,7 +86,7 @@ public:
     }
 
     void traverse(TraversalCallback *callback) override {
-        callback->put_parameter("position", (Point3f &) m_position.value(), +ParamFlags::NonDifferentiable);
+        callback->put_parameter("position", (Point3f &) m_position.value(), ParamFlags::Differentiable | ParamFlags::Discontinuous);
         callback->put_object("intensity", m_intensity.get(), +ParamFlags::Differentiable);
     }
 
